@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/suspicious/noExplicitAny: to be able to log every tyoe of variable */
 import { Chalk, type ChalkInstance } from "chalk";
 export class Logger {
-	private static instance: Logger;
+	private name: string;
 	private logLevel = new Map();
 	private readonly colorMap: Record<string, ChalkInstance> = {
 		info: new Chalk().blue,
@@ -9,25 +9,18 @@ export class Logger {
 		warn: new Chalk().yellow,
 		debug: new Chalk().green,
 	};
-	private constructor() {
+	public constructor(name: string) {
+		this.name = name;
 		this.logLevel.set(0, "info");
 		this.logLevel.set(1, "error");
 		this.logLevel.set(2, "warn");
 		this.logLevel.set(3, "debug");
 	}
 
-	public static getInstance() {
-		if (!Logger.instance) {
-			Logger.instance = new Logger();
-		}
-
-		return Logger.instance;
-	}
-
 	private getMessage(level: string, msg: string) {
 		const timestamp = new Date().toISOString();
 		//- ${msg}
-		const message = `[${timestamp}][${level}] - ${msg}`;
+		const message = `[${timestamp}][${this.name}][${level}] - ${msg}`;
 		return this.colorMap[level](message);
 	}
 

@@ -6,7 +6,7 @@ import {
 } from "fastify-type-provider-zod";
 import { Logger } from "./logger/logger.ts";
 
-const logger = Logger.getInstance();
+const logger = new Logger("SERVER");
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
 app.setSerializerCompiler(serializerCompiler);
