@@ -1,19 +1,19 @@
 import type { Category } from "../../category/entities/category.ts";
 import type { TransactionType } from "./transaction-type.ts";
 
-type TransactionProps = {
+export interface TransactionProps {
 	amount: number;
-	effectedAt: Date;
+	dueDate: Date;
 	isOut: boolean;
 	category: Category;
 	transactionType: TransactionType;
 	createdAt: Date;
 	updatedAt: Date;
-};
+}
 
 export class Transaction {
 	private amount: number;
-	private effectedAt: Date;
+	private dueDate: Date;
 	private isOut: boolean = false;
 	private category: Category;
 	private transactionType: TransactionType;
@@ -22,7 +22,7 @@ export class Transaction {
 
 	public constructor(props: TransactionProps) {
 		this.amount = props.amount;
-		this.effectedAt = props.effectedAt;
+		this.dueDate = props.dueDate;
 		this.isOut = props.isOut;
 		this.category = props.category;
 		this.transactionType = props.transactionType;
@@ -39,8 +39,8 @@ export class Transaction {
 		return this.amount;
 	}
 
-	public getEffectedAt() {
-		return this.effectedAt;
+	public getDueDate() {
+		return this.dueDate;
 	}
 
 	public getCreatedAt() {
@@ -73,8 +73,8 @@ export class Transaction {
 		this.updatedAt = updatedAt;
 	}
 
-	public setEffectedAt(effectedAt: Date) {
-		this.effectedAt = effectedAt;
+	public setDueDate(dueDate: Date) {
+		this.dueDate = dueDate;
 	}
 	public setIsOut(isOut: boolean) {
 		this.isOut = isOut;

@@ -6,9 +6,6 @@
 			"semicolons": "asNeeded",
 			"indentWidth": 2,
 			"indentStyle": "space"
-		},
-		"assist": {
-			"enabled": true
 		}
 	}
 }
