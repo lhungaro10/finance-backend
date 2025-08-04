@@ -1,10 +1,12 @@
 import type { Category } from "../../category/entities/category.ts";
+import type { TransactionType } from "./transaction-type.ts";
 
 type TransactionProps = {
 	amount: number;
 	effectedAt: Date;
 	isOut: boolean;
 	category: Category;
+	transactionType: TransactionType;
 	createdAt: Date;
 	updatedAt: Date;
 };
@@ -14,6 +16,7 @@ export class Transaction {
 	private effectedAt: Date;
 	private isOut: boolean = false;
 	private category: Category;
+	private transactionType: TransactionType;
 	private createdAt: Date;
 	private updatedAt: Date;
 
@@ -22,10 +25,16 @@ export class Transaction {
 		this.effectedAt = props.effectedAt;
 		this.isOut = props.isOut;
 		this.category = props.category;
+		this.transactionType = props.transactionType;
 		this.createdAt = props.createdAt;
 		this.updatedAt = props.createdAt;
 	}
 
+	public isFinished(): boolean {
+		return true;
+	}
+
+	// getters and setters
 	public getAmount() {
 		return this.amount;
 	}
@@ -47,6 +56,13 @@ export class Transaction {
 
 	public getCategory(): Category {
 		return this.category;
+	}
+	public getTransactionType(): TransactionType {
+		return this.transactionType;
+	}
+
+	public setTransactionType(transactionType: string): void {
+		this.transactionType.setType(transactionType);
 	}
 
 	public setCategory(category: Category): void {
