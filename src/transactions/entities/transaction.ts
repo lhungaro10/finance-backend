@@ -1,26 +1,33 @@
+import type { Category } from "../../category/entities/category.ts";
+
 type TransactionProps = {
-	value: number;
+	amount: number;
 	effectedAt: Date;
 	isOut: boolean;
+	category: Category;
+	createdAt: Date;
+	updatedAt: Date;
 };
 
 export class Transaction {
-	private value: number;
+	private amount: number;
 	private effectedAt: Date;
+	private isOut: boolean = false;
+	private category: Category;
 	private createdAt: Date;
 	private updatedAt: Date;
-	private isOut: boolean = false;
 
-	public constructor({ value, effectedAt, isOut }: TransactionProps) {
-		this.value = value;
-		this.effectedAt = effectedAt;
-		this.createdAt = new Date();
-		this.updatedAt = this.createdAt;
-		this.isOut = isOut;
+	public constructor(props: TransactionProps) {
+		this.amount = props.amount;
+		this.effectedAt = props.effectedAt;
+		this.isOut = props.isOut;
+		this.category = props.category;
+		this.createdAt = props.createdAt;
+		this.updatedAt = props.createdAt;
 	}
 
-	public getValue() {
-		return this.value;
+	public getAmount() {
+		return this.amount;
 	}
 
 	public getEffectedAt() {
@@ -38,6 +45,14 @@ export class Transaction {
 		return this.isOut;
 	}
 
+	public getCategory(): Category {
+		return this.category;
+	}
+
+	public setCategory(category: Category): void {
+		this.category = category;
+	}
+
 	public setUpdatedAt(updatedAt: Date) {
 		this.updatedAt = updatedAt;
 	}
@@ -47,5 +62,9 @@ export class Transaction {
 	}
 	public setIsOut(isOut: boolean) {
 		this.isOut = isOut;
+	}
+
+	public setAmount(amount: number) {
+		this.amount = amount;
 	}
 }

@@ -4,7 +4,7 @@ import {
 	validatorCompiler,
 	type ZodTypeProvider,
 } from "fastify-type-provider-zod";
-import { Logger } from "./logger/logger.ts";
+import { Logger } from "./commom/logger/logger.ts";
 
 const logger = new Logger("SERVER");
 const app = fastify().withTypeProvider<ZodTypeProvider>();
