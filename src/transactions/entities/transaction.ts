@@ -1,4 +1,4 @@
-import type { Category } from "../../category/entities/category.ts";
+import type { Category } from "../../category/domain/entities/category.ts";
 import type { TransactionType } from "./transaction-type.ts";
 
 export interface TransactionProps {

@@ -1,24 +1,14 @@
-// Configuração mínima para habilitar decorators no Biome.
 {
 	"$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
-	"linter": {
-		"rules": {
-			"style": {
-				"useImportType": "off"
-			}
-		}
-	},
+	"extends": ["ultracite"],
 	"javascript": {
 		"formatter": {
-			"semicolons": "always",
+			"semicolons": "asNeeded",
 			"indentWidth": 2,
 			"indentStyle": "space"
 		},
 		"parser": {
 			"unsafeParameterDecoratorsEnabled": true
-		},
-		"assist": {
-			"enabled": false
 		}
 	}
 }

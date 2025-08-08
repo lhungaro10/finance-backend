@@ -1,16 +1,33 @@
 {
-	"$schema": "https://json.schemastore.org/tsconfig",
-	"_version": "22.0.0",
-
 	"compilerOptions": {
-		"lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Iterator"],
-		"module": "nodenext",
-		"target": "es2022",
-		"noEmit": true,
+		/* ----- Configurações Essenciais do Módulo ----- */
+		"target": "ES2022", // Alinhado com versões recentes do Node.js
+		"module": "NodeNext", // A melhor opção para projetos Node.js modernos
+		"moduleResolution": "NodeNext", // Necessário quando 'module' é 'NodeNext'
+		"esModuleInterop": true, // Garante compatibilidade entre CJS e ESM
+
+		"experimentalDecorators": true, // Permite o uso da sintaxe @decorator
+		"emitDecoratorMetadata": true,
+
+		/* ----- Configurações de Qualidade de Código ----- */
+		"strict": true, // Habilita todas as checagens estritas de tipo
+		"forceConsistentCasingInFileNames": true, // Evita bugs em sistemas case-sensitive
+		"noUnusedLocals": true, // Aponta variáveis locais não utilizadas
+		"noUnusedParameters": true, // Aponta parâmetros de função não utilizados
 		"allowImportingTsExtensions": true,
-		"strict": true,
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"moduleResolution": "node16"
-	}
+		"noEmit": true,
+		/* ----- Configuração de Saída (para build de produção) ----- */
+		"outDir": "./dist", // Pasta para onde o 'tsc' irá compilar os arquivos JS
+
+		/* ----- Praticidade ----- */
+		"skipLibCheck": true, // Pula a verificação de tipos em arquivos de declaração (.d.ts)
+
+		/* ----- Se você usar aliases de caminho ----- */
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"]
+		}
+	},
+	"include": ["src/**/*"], // Quais arquivos o TypeScript deve analisar
+	"exclude": ["node_modules"] // Quais arquivos ignorar
 }

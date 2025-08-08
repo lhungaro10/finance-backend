@@ -5,8 +5,9 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"build": "tsc -p tsconfig.json",
-		"start": "node --experimental-strip-types --no-warnings --watch src/server.ts",
+		"build": "tsc",
+		"dev": "tsx watch src/server.ts",
+		"start": "node  --no-warnings --watch dist/src/server.ts",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
@@ -15,15 +16,28 @@
 	"packageManager": "pnpm@10.14.0",
 	"devDependencies": {
 		"@biomejs/biome": "2.1.2",
+		"@types/glob": "^9.0.0",
 		"@types/node": "^24.1.0",
 		"chalk": "^5.5.0",
+		"tsx": "^4.20.3",
 		"typescript": "^5.9.2",
 		"ultracite": "5.1.2"
 	},
 	"dependencies": {
 		"@fastify/cors": "^11.1.0",
+		"@types/express": "^5.0.3",
+		"class-transformer": "^0.5.1",
+		"class-validator": "^0.14.2",
+		"express": "^5.1.0",
 		"fastify": "^5.4.0",
+		"fastify-routing-controllers": "^0.0.6",
 		"fastify-type-provider-zod": "^5.0.2",
+		"glob": "^11.0.3",
+		"http-status-codes": "^2.3.0",
+		"inversify": "^7.7.0",
+		"middie": "^7.1.0",
+		"reflect-metadata": "^0.2.2",
+		"routing-controllers": "^0.11.3",
 		"zod": "^4.0.14"
 	}
 }
