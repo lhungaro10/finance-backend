@@ -2,7 +2,6 @@ import { inject, injectable } from "inversify";
 import { noop } from "@/commom/types/noop.ts";
 import { Category, CategoryProps } from "../entities/category.ts";
 import { CreateCategoryService } from "../services/create-category-service.ts";
-import { Logger } from "@/commom/logger/logger.ts";
 
 @injectable()
 export class CreateCategoryCommand {
