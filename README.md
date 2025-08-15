@@ -15,7 +15,7 @@
 [PNPM_BADGE]: https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=fff
 [PRISMA_BADGE]: https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white
 
-# Finance Backend
+<h1 align="center" style="font-weight: bold;">Finance Backend 💵</h1>
 
 ![license][LICENSE__BADGE]
 ![pnpm][PNPM_BADGE]
@@ -32,7 +32,6 @@ Permite organizar categorias e registrar transações (receitas e despesas), con
 ## Pré-requisitos
 
 - Node.js 20+ (recomendado 22+)
-- pnpm
 - Docker e Docker Compose
 
 ## Estrutura geral dos módulos
@@ -77,3 +76,20 @@ PGADMIN_PASSWORD=
 ```
 
 Ajuste `DB_URL` conforme seu ambiente.
+
+### Contributors
+
+This project exists thanks to all the people who contribute.
+<a href="https://github.com/lhungaro10/finance-backend/graphs/contributors">
+
+  <div>
+    <img src="https://avatars.githubusercontent.com/u/94537981?v=4" width="75px;" style="border-radius: 8px" alt="Fernanda Kipper Profile Picture"/><br>
+    <sub>
+      <b>Lucas Hungaro</b>
+    </sub>
+  </div>
+</a>
+
+## License
+
+[MIT](LICENSE) © Lucas Hungaro
